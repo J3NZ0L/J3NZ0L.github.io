@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Railways</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="menuPage" class="">
+    <h1 class="gameTitle">RAILWAYS</h1>
+
+    <div id="playerNameSetting">
+      <input type="text" placeholder="ADD MEG A NEVED!" id="playerNameInput">
+    </div>
+
+    <div id="difficultySetting" class="container-box">
+      <p>Állítsd be a nehézséget!</p>
+      <div id="difficultySettingButtons">
+        <button class="difficulty-button selected" id="buttonEasy">5 X 5<br>KÖNNYŰ</button>
+        <button class="difficulty-button" id="buttonHard">7 X 7<br>NEHÉZ</button>
+      </div>
+    </div>
+
+    <div id="description">
+      <button class="menu-button" id="buttonDescription">LEÍRÁS</button>
+    </div>
+    
+    <div id="startGame">
+      <button class="menu-button" id="buttonStartGame">JÁTÉK INDÍTÁSA</button>
+    </div>
+    <img src="./kiindulo_hun/pics/rail.png" alt="" srcset="" id="railTrack">
+  </div>
+
+  <div id="descriptionModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2><i><b>Történet</b></i></h2>
+      <p><i>Nekeresdországban Nevenincs király szeretne egy körvasutat építeni, amely bejárja a birodalmának minden szegletét. A feladat megvalósítása Furfangra, az udvari tanácsosra vár, akinek a munkáját nehezíti a királyság változatos tája. Segítsünk Furfangnak megtervezni a királyság vasúthálózatához tartozó térképet!</i></p>
+      <h2><i><b>A játék szabályai</b></i></h2>
+      <p>
+        A játék különböző méretű négyzetrácsos hálón játszódhat, ahol a célunk az, hogy egy összefüggő körvasútvonalat alkossunk úgy, hogy minden olyan helyre eljusson a vonat, ahova lehetséges.</p>
+        <p>A térképen több különböző típusú mező található, melyek a játék kezdetén látszódnak a térképen:</p>
+        <h4>Üres mező:</h4><p> Ebben a cellában a vasútvonal a belépési irányon kívül maradék három irányba tud haladni.	</p>
+        <h4>Híd mező:</h4><p> Ezen a mezőn a vasútvonalat csak a híd által megadott egyenes írányban lehet megépíteni.</p>	<h4>Hegy mező:</h4><p>Ezeken a mezőkön a sziklák a cellának két szomszédos kijáratát lezárják, így csak 90°-ban elfordulva lehet továbbhaladni.</p>
+        <h4>Oázis mező:</h4><p>Erre a cellára nem lehet vasutat építeni.</p>	
+        <p>Mivel szeretnénk a vasúthálózat alapanyagán spórolni, így a vasúthálózat sehol nem keresztezheti önmagát, sehol nem ágazhat el, és nem haladhat át többször egy cellán!
+      </p>
+
+      <div class="user-guide">
+        <h4>Elemek lehelyezése</h4>
+        <p>
+          <img src="./kiindulo_hun/pics/left-click"> <b>Bal egérgomb:</b> sín lehelyezése<br>
+          <img src="./kiindulo_hun/pics/right-click"> <b>Jobb egérgomb:</b> sín forgatása
+        </p>
+        <p><small>Megjegyzés: Csak ott használható, ahol megengedett.</small></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="gamePage" class="hidden">
+    <h1 class="gameTitle">RAILWAYS</h1>
+    <div id="gameInfo" class="container-box">
+      <p>Útvonaltervező:</p>
+      <p id="inGamePlayerName"></p>
+      <p>Eltelt idő: <span id="elapsedTime">00:00</span></p>
+    </div>
+    <div id="gameField"></div>
+  </div>
+  
+  <script src="description.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

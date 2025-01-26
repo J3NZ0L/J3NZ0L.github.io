@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7ed;
+    margin: 0;
+}
+
+#gamePage, #menuPage {
+  text-align: center;
+  padding: 20px;
+}
+
+.gameTitle {
+    margin: 0 auto 20px auto;
+    font-size: 4em;
+    font-weight: bold;
+    color: #d2b48c;
+    text-shadow: 2px 2px #b08b5b;
+}
+
+#playerNameSetting input {
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #d2b48c;
+    border-radius: 8px;
+    width: 55vw;
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #b08b5b;
+}
+
+.container-box{
+  padding: 10px;
+  font-size: 1.2em;
+  border: 2px solid #9bbf8f;
+  border-radius: 8px;
+  margin: 0 auto;
+  color: #b08b5b;
+  background-color: white;
+  width: 55vw;
+  max-width: 300px;
+}
+
+#difficultySetting {
+  color: #6B8E23;
+  border-color: #9bbf8f;
+}
+
+#gameInfo {
+  color: black;
+  border-color: #b08b5b;
+}
+
+#difficultySettingButtons {
+  display: flex;
+  flex: 1;
+  flex-direction: row; /* place buttons explicitly in a row */
+  gap: 5px;              /* space buttons a bit */
+  margin: 0 auto 0 auto;
+  width: 100%;
+}
+
+#difficultySettingButtons button:hover {
+  background-color: #dee3dc;
+}
+
+#difficultySettingButtons button {
+  padding: 10px;
+  font-size: 15px;
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 auto;
+  border: 2px solid #9bbf8f; 
+  color: #9bbf8f; 
+  cursor: pointer; 
+}
+  
+.container-box p {
+  display:block;
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 1em;
+}
+
+#difficultySettingButtons .difficulty-button.selected {
+  background-color: #cfdfca;
+  color: #4a5f3e;
+  font-weight: bold;
+}
+
+#description, #startGame {
+  margin: 10px 0;
+}
+
+.menu-button {
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  background-color: #d3d3c3;
+  color: #4a4a4a;
+  cursor: pointer;
+  width: 10em;
+}
+
+#startGame .menu-button {
+  background-color: #b3b3b3;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#railTrack {
+  width: 100%;
+  max-width: 65vw;
+  margin-top: 0.5em;
+}
+
+#gameField {
+  display: grid;
+  gap: 1.5px; /* Space between cells */
+  justify-content: center;
+  margin: 20px auto;
+  width: 85vw; /* Set to a percentage for responsiveness */
+  max-width: 600px; /* Set a max width for larger screens */
+}
+
+#gameField.easy {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+#gameField.hard {
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+#gameField div {
+  /* to ensure squareness */
+  width: 100%;
+  padding-top: 100%; 
+  background-size: cover; /* ensure scaled image background */
+  background-position: center;
+  border-radius: 3px;
+}
+
+
+/* ---DESCRIPTION---*/
+/* Modal background overlay */
+.modal {
+  display: none; /* hide by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background for a nice touch*/
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* ensure this appears above everything else*/
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh; 
+  overflow-y: auto; /* enable vertical scrolling if needed */
+  text-align: center;
+  position: relative;
+}
+
+/* scrollbar style inside modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* Description close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Description user guide */
+.user-guide {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+.user-guide img {
+  width: 2em; 
+  height: 2em;
+  vertical-align: middle;
+}
+
+.user-guide h4 {
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
+
+/* ---DESCRIPTION END---*/
+
+
+/* Tile classes, Rotatement classes */
+.Tile-straight-rail{
+  background-image: url("./kiindulo_hun/pics/tiles/straight_rail.png")
+}
+
+.Tile-oasis{
+  background-image: url("./kiindulo_hun/pics/tiles/oasis.png")
+}
+
+.Tile-mountain{
+  background-image: url("./kiindulo_hun/pics/tiles/mountain.png")
+}
+
+.Tile-mountain_rail{
+  background-image: url("./kiindulo_hun/pics/tiles/mountain_rail.png")
+}
+
+.Tile-empty{
+  background-image: url("./kiindulo_hun/pics/tiles/empty.png")
+}
+
+.Tile-curve_rail{
+  background-image: url("./kiindulo_hun/pics/tiles/curve_rail.png")
+}
+
+.Tile-bridge{
+  background-image: url("./kiindulo_hun/pics/tiles/bridge.png")
+}
+
+.Tile-bridge_rail{
+  background-image: url("./kiindulo_hun/pics/tiles/bridge_rail.png")
+}
+
+.rotate-90 { transform: rotate(90deg); }
+.rotate-180 { transform: rotate(180deg); }
+.rotate-270 { transform: rotate(270deg); }
+
+
+/* Other */
+.hidden {
+  display: none;
+}
+
+p i {
+  font-size:small;
+}
+
+.modal-content p {
+  font-size: medium;
+}
